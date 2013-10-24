@@ -69,7 +69,7 @@ speedTest.showMarkers = function() {
     var latLng = new google.maps.LatLng(speedTest.locais[i].lat, speedTest.locais[i].lon);
     
     // Icone do google: http://chart.apis.google.com/chart?cht=mm&chs=24x32&chco=FFFFFF,008CFF,000000&ext=.png
-    var imageUrl = 'http://infodprf.com/m1.png';
+    var imageUrl = 'http://dprf.info/assets/img/m1.png';
     var markerImage = new google.maps.MarkerImage(imageUrl, new google.maps.Size(53, 52));
     var marker = new google.maps.Marker({
       'position': latLng,
