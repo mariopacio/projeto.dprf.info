@@ -1,0 +1,240 @@
+RewriteEngine on
+
+# PERIODOS DE PESQUISA ORGANIZADOS SEM DATA ESPECIFICADA
+
+    #RewriteRule ^(Anual)(|/)$ index.php?tipo=resumo&tp_periodo=$1 [L,NC,QSA]
+    RewriteRule ^(Semestre)(|/)$ index.php?tipo=resumo&tp_periodo=$1 [L,NC,QSA]
+    RewriteRule ^(Trimestre)(|/)$ index.php?tipo=resumo&tp_periodo=$1 [L,NC,QSA]
+    RewriteRule ^(Mensal)(|/)$ index.php?tipo=resumo&tp_periodo=$1 [L,NC,QSA]
+    RewriteRule ^(Diario)(|/)$ index.php?tipo=resumo&tp_periodo=$1 [L,NC,QSA]
+    RewriteRule ^(BR)/(Perigosas)(|/)$ index.php?tipo=br.perigosas [L,NC,QSA]
+
+# PERIODOS DE PESQUISA ORGANIZADOS COM DATA / MODELOS / MARCAS / CAUSAS / TIPOS E/OU IDADE DOS CONDUTORES
+
+    # if (ANUAL) 
+
+        # Padrão
+        #RewriteRule ^(Anual)/([0-9]{4})(|/)$ index.php?tipo=resumo&tp_periodo=$1&ano=$2 [L,NC,QSA]
+
+        # Criação do cache
+        #RewriteRule ^(Anual)/([0-9]{4})/Init$ index.php?tipo=cache&tp_periodo=$1&ano=$2 [L,NC,QSA]
+        
+        # Trechos mais perigosos no semestre
+        #RewriteRule ^(BR)/(Perigosas)/(Anual)/([0-9]{4})(|/)$ index.php?tipo=br.perigosas&tp_periodo=$3&ano=$4 [L,NC,QSA]
+        
+        # Indice de rodovias
+        #RewriteRule ^(BR)/(Procurar)/(Anual)/([0-9]{4})(|/)$ index.php?tipo=br.search&tp_periodo=$3&ano=$4 [L,NC,QSA]
+
+        # Modelos de veículos
+        #RewriteRule ^(Anual)/([0-9]{4})/(Modelos)$ index.php?tipo=veiculos.modelos&tp_periodo=$1&ano=$2 [L,NC,QSA]
+        #RewriteRule ^(Anual)/([0-9]{4})/(Modelos)/([A-Z]+)/(.+)$ index.php?tipo=veiculos.modelos&tp_periodo=$1&ano=$2&marca=$4&modelo=$5 [L,NC,QSA]
+
+        # Marcas de veículos
+        #RewriteRule ^(Anual)/([0-9]{4})/(Marcas)$ index.php?tipo=veiculos.marcas&tp_periodo=$1&ano=$2 [L,NC,QSA]
+        #RewriteRule ^(Anual)/([0-9]{4})/(Marcas)/([A-Z]+)$ index.php?tipo=veiculos.marcas&tp_periodo=$1&ano=$2&marca=$4 [L,NC,QSA]
+
+        # Tipos de acidente
+        #RewriteRule ^(Anual)/([0-9]{4})/(Tipos)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&ano=$2&tipo_exibicao=$3 [L,NC,QSA]
+        #RewriteRule ^(Anual)/([0-9]{4})/(Tipos)/([0-9]+)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&ano=$2&tipo_exibicao=$3&tipo_id=$4 [L,NC,QSA]
+
+        # Causas de acidente
+        #RewriteRule ^(Anual)/([0-9]{4})/(Causas)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&ano=$2&tipo_exibicao=$3 [L,NC,QSA]
+        #RewriteRule ^(Anual)/([0-9]{4})/(Causas)/([0-9]+)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&ano=$2&tipo_exibicao=$3&causa_id=$4 [L,NC,QSA]
+
+        # Faixa de idade
+        #RewriteRule ^(Anual)/([0-9]{4})/(Idade)$ index.php?tipo=idade&tp_periodo=$1&ano=$2 [L,NC,QSA]
+        #RewriteRule ^(Anual)/([0-9]{4})/(Idade)/(.+)$ index.php?tipo=idade&tp_periodo=$1&ano=$2&idade=$4 [L,NC,QSA]
+
+    # endif (ANUAL) 
+
+
+    # if (SEMESTRE) 
+
+        # Padrão
+        RewriteRule ^(Semestre)/(1|2)/([0-9]{4})(|/)$ index.php?tipo=resumo&tp_periodo=$1&periodo=$2&ano=$3 [L,NC,QSA]
+        
+        # Criação do cache
+        RewriteRule ^(Semestre)/(1|2)/([0-9]{4})/Init$ index.php?tipo=cache&tp_periodo=$1&periodo=$2&ano=$3 [L,NC,QSA]
+        
+        # Trechos mais perigosos no semestre
+        RewriteRule ^(BR)/(Perigosas)/(Semestre)/(1|2)/([0-9]{4})(|/)$ index.php?tipo=br.perigosas&tp_periodo=$3&periodo=$4&ano=$5 [L,NC,QSA]
+        
+        # Indice de rodovias
+        RewriteRule ^(BR)/(Procurar)/(Semestre)/(1|2)/([0-9]{4})(|/)$ index.php?tipo=br.search&tp_periodo=$3&periodo=$4&ano=$5 [L,NC,QSA]
+        
+        # Modelos de veículos
+        RewriteRule ^(Semestre)/(1|2)/([0-9]{4})/(Modelos)(|/)$ index.php?tipo=veiculos.modelos&tp_periodo=$1&periodo=$2&ano=$3 [L,NC,QSA]
+        RewriteRule ^(Semestre)/(1|2)/([0-9]{4})/(Modelos)/([A-Z]+)/(.+)(|/)$ index.php?tipo=veiculos.modelos&tp_periodo=$1&periodo=$2&ano=$3&marca=$5&modelo=$6 [L,NC,QSA]
+
+        # Marcas de veículos
+        RewriteRule ^(Semestre)/(1|2)/([0-9]{4})/(Marcas)(|/)$ index.php?tipo=veiculos.marcas&tp_periodo=$1&periodo=$2&ano=$3 [L,NC,QSA]
+        RewriteRule ^(Semestre)/(1|2)/([0-9]{4})/(Marcas)/([A-Z]+)(|/)$ index.php?tipo=veiculos.marcas&tp_periodo=$1&periodo=$2&ano=$3&marca=$5 [L,NC,QSA]
+
+        # Tipos de acidente
+        RewriteRule ^(Semestre)/(1|2)/([0-9]{4})/(Tipos)(|/)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&periodo=$2&ano=$3&tipo_exibicao=$4 [L,NC,QSA]
+        RewriteRule ^(Semestre)/(1|2)/([0-9]{4})/(Tipos)/([0-9]+)(|/)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&periodo=$2&ano=$3&tipo_exibicao=$4&tipo_id=$5 [L,NC,QSA]
+
+        # Causas de acidente
+        RewriteRule ^(Semestre)/(1|2)/([0-9]{4})/(Causas)(|/)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&periodo=$2&ano=$3&tipo_exibicao=$4 [L,NC,QSA]
+        RewriteRule ^(Semestre)/(1|2)/([0-9]{4})/(Causas)/([0-9]+)(|/)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&periodo=$2&ano=$3&tipo_exibicao=$4&causa_id=$5 [L,NC,QSA]
+
+        # Faixa de idade
+        RewriteRule ^(Semestre)/(1|2)/([0-9]{4})/(Idade)(|/)$ index.php?tipo=idade&tp_periodo=$1&periodo=$2&ano=$3 [L,NC,QSA]
+        RewriteRule ^(Semestre)/(1|2)/([0-9]{4})/(Idade)/(.+)(|/)$ index.php?tipo=idade&tp_periodo=$1&periodo=$2&ano=$3&idade=$5 [L,NC,QSA]
+        
+        # Geolocalização
+        RewriteRule ^(Semestre)/(1|2)/([0-9]{4})/(Geo)(|/)$ index.php?tipo=maps&tp_periodo=$1&periodo=$2&ano=$3 [L,NC,QSA]
+    
+    # endif (SEMESTRE) 
+    
+    
+    # if (TRIMESTRE) 
+    
+        # Padrão
+        RewriteRule ^(Trimestre)/(1|2|3|4)/([0-9]{4})(|/)$ index.php?tipo=resumo&tp_periodo=$1&periodo=$2&ano=$3 [L,NC,QSA]
+        
+        # Criação do cache
+        RewriteRule ^(Trimestre)/(1|2|3|4)/([0-9]{4})/Init$ infodprf/infodprf.create.cache.php?tipo=cache&tp_periodo=$1&periodo=$2&ano=$3 [L,NC,QSA]
+        
+        # Trechos mais perigosos 
+        RewriteRule ^(BR)/(Perigosas)/(Trimestre)/(1|2|3|4)/([0-9]{4})(|/)$ index.php?tipo=br.perigosas&tp_periodo=$3&periodo=$4&ano=$5 [L,NC,QSA]
+        
+        # Indice de rodovias
+        RewriteRule ^(BR)/(Procurar)/(Trimestre)/(1|2|3|4)/([0-9]{4})(|/)$ index.php?tipo=br.search&tp_periodo=$3&periodo=$4&ano=$5 [L,NC,QSA]
+    
+        # Modelos de veículos
+        RewriteRule ^(Trimestre)/(1|2|3|4)/([0-9]{4})/(Modelos)(|/)$ index.php?tipo=veiculos.modelos&tp_periodo=$1&periodo=$2&ano=$3 [L,NC,QSA]
+        RewriteRule ^(Trimestre)/(1|2|3|4)/([0-9]{4})/(Modelos)/([A-Z]+)/(.+)(|/)$ index.php?tipo=veiculos.modelos&tp_periodo=$1&periodo=$2&ano=$3&marca=$5&modelo=$6 [L,NC,QSA]
+    
+        # Marcas de veículos
+        RewriteRule ^(Trimestre)/(1|2|3|4)/([0-9]{4})/(Marcas)(|/)$ index.php?tipo=veiculos.marcas&tp_periodo=$1&periodo=$2&ano=$3 [L,NC,QSA]
+        RewriteRule ^(Trimestre)/(1|2|3|4)/([0-9]{4})/(Marcas)/([A-Z]+)(|/)$ index.php?tipo=veiculos.marcas&tp_periodo=$1&periodo=$2&ano=$3&marca=$5 [L,NC,QSA]
+    
+        # Tipos de acidente
+        RewriteRule ^(Trimestre)/(1|2|3|4)/([0-9]{4})/(Tipos)(|/)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&periodo=$2&ano=$3&tipo_exibicao=$4 [L,NC,QSA]
+        RewriteRule ^(Trimestre)/(1|2|3|4)/([0-9]{4})/(Tipos)/([0-9]+)(|/)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&periodo=$2&ano=$3&tipo_exibicao=$4&tipo_id=$5 [L,NC,QSA]
+    
+        # Causas de acidente
+        RewriteRule ^(Trimestre)/(1|2|3|4)/([0-9]{4})/(Causas)(|/)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&periodo=$2&ano=$3&tipo_exibicao=$4 [L,NC,QSA]
+        RewriteRule ^(Trimestre)/(1|2|3|4)/([0-9]{4})/(Causas)/([0-9]+)(|/)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&periodo=$2&ano=$3&tipo_exibicao=$4&causa_id=$5 [L,NC,QSA]
+    
+        # Faixa de idade
+        RewriteRule ^(Trimestre)/(1|2|3|4)/([0-9]{4})/(Idade)(|/)$ index.php?tipo=idade&tp_periodo=$1&periodo=$2&ano=$3 [L,NC,QSA]
+        RewriteRule ^(Trimestre)/(1|2|3|4)/([0-9]{4})/(Idade)/(.+)(|/)$ index.php?tipo=idade&tp_periodo=$1&periodo=$2&ano=$3&idade=$5 [L,NC,QSA]
+    
+    # endif (TRIMESTRE) 
+    
+    
+    # if (MENSAL) 
+    
+        # Padrão
+        RewriteRule ^(Mensal)/([0-9]{2})/([0-9]{4})(|/)$ index.php?tipo=resumo&tp_periodo=$1&mes=$2&ano=$3 [L,NC,QSA]
+        
+        # Trechos mais perigosos 
+        RewriteRule ^(BR)/(Perigosas)/(Mensal)/([0-9]{2})/([0-9]{4})(|/)$ index.php?tipo=br.perigosas&tp_periodo=$3&mes=$4&ano=$5 [L,NC,QSA]
+        
+        # Indice de rodovias
+        RewriteRule ^(BR)/(Procurar)/(Mensal)/([0-9]{2})/([0-9]{4})(|/)$ index.php?tipo=br.search&tp_periodo=$3&mes=$4&ano=$5 [L,NC,QSA]
+    
+        # Modelos de veículos
+        RewriteRule ^(Mensal)/([0-9]{2})/([0-9]{4})/(Modelos)(|/)$ index.php?tipo=veiculos.modelos&tp_periodo=$1&mes=$2&ano=$3 [L,NC,QSA]
+        RewriteRule ^(Mensal)/([0-9]{2})/([0-9]{4})/(Modelos)/([A-Z]+)/(.+)(|/)$ index.php?tipo=veiculos.modelos&tp_periodo=$1&mes=$2&ano=$3&marca=$5&modelo=$6 [L,NC,QSA]
+    
+        # Marcas de veículos
+        RewriteRule ^(Mensal)/([0-9]{2})/([0-9]{4})/(Marcas)(|/)$ index.php?tipo=veiculos.marcas&tp_periodo=$1&mes=$2&ano=$3 [L,NC,QSA]
+        RewriteRule ^(Mensal)/([0-9]{2})/([0-9]{4})/(Marcas)/([A-Z]+)(|/)$ index.php?tipo=veiculos.marcas&tp_periodo=$1&mes=$2&ano=$3&marca=$5 [L,NC,QSA]
+    
+        # Tipos de acidente
+        RewriteRule ^(Mensal)/([0-9]{2})/([0-9]{4})/(Tipos)(|/)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&mes=$2&ano=$3&tipo_exibicao=$4 [L,NC,QSA]
+        RewriteRule ^(Mensal)/([0-9]{2})/([0-9]{4})/(Tipos)/([0-9]+)(|/)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&mes=$2&ano=$3&tipo_exibicao=$4&tipo_id=$5 [L,NC,QSA]
+    
+        # Causas de acidente
+        RewriteRule ^(Mensal)/([0-9]{2})/([0-9]{4})/(Causas)(|/)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&mes=$2&ano=$3&tipo_exibicao=$4 [L,NC,QSA]
+        RewriteRule ^(Mensal)/([0-9]{2})/([0-9]{4})/(Causas)/([0-9]+)(|/)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&mes=$2&ano=$3&tipo_exibicao=$4&causa_id=$5 [L,NC,QSA]
+    
+        # Faixa de idade
+        RewriteRule ^(Mensal)/([0-9]{2})/([0-9]{4})/(Idade)(|/)$ index.php?tipo=idade&tp_periodo=$1&mes=$2&ano=$3 [L,NC,QSA]
+        RewriteRule ^(Mensal)/([0-9]{2})/([0-9]{4})/(Idade)/(.+)(|/)$ index.php?tipo=idade&tp_periodo=$1&mes=$2&ano=$3&idade=$5 [L,NC,QSA]
+    
+    # endif (MENSAL) 
+    
+    
+    # if (DIARIO) 
+    
+        # Padrão
+        RewriteRule ^(Diario)/([0-9]{2})/([0-9]{2})/([0-9]{4})(|/)$ index.php?tipo=resumo&tp_periodo=$1&dia=$2&mes=$3&ano=$4 [L,NC,QSA]
+        
+        # Trechos mais perigosos 
+        RewriteRule ^(BR)/(Perigosas)/(Diario)/([0-9]{2})/([0-9]{2})/([0-9]{4})(|/)$ index.php?tipo=br.perigosas&tp_periodo=$3&dia=$4&mes=$5&ano=$6 [L,NC,QSA]
+        
+        # Indice de rodovias
+        RewriteRule ^(BR)/(Procurar)/(Diario)/([0-9]{2})/([0-9]{2})/([0-9]{4})(|/)$ index.php?tipo=br.search&tp_periodo=$3&dia=$4&mes=$5&ano=$6 [L,NC,QSA]
+    
+        # Modelos de veículos
+        RewriteRule ^(Diario)/([0-9]{2})/([0-9]{2})/([0-9]{4})/(Modelos)(|/)$ index.php?tipo=veiculos.modelos&tp_periodo=$1&dia=$2&mes=$3&ano=$4 [L,NC,QSA]
+        RewriteRule ^(Diario)/([0-9]{2})/([0-9]{2})/([0-9]{4})/(Modelos)/([A-Z]+)/(.+)(|/)$ index.php?tipo=veiculos.modelos&tp_periodo=$1&dia=$2&mes=$3&ano=$4&marca=$6&modelo=$7 [L,NC,QSA]
+    
+        # Marcas de veículos
+        RewriteRule ^(Diario)/([0-9]{2})/([0-9]{2})/([0-9]{4})/(Marcas(|/))$ index.php?tipo=veiculos.marcas&tp_periodo=$1&dia=$2&mes=$3&ano=$4 [L,NC,QSA]
+        RewriteRule ^(Diario)/([0-9]{2})/([0-9]{2})/([0-9]{4})/(Marcas)/([A-Z]+)(|/)$ index.php?tipo=veiculos.marcas&tp_periodo=$1&dia=$2&mes=$3&ano=$4&marca=$6 [L,NC,QSA]
+    
+        # Tipos de acidente
+        RewriteRule ^(Diario)/([0-9]{2})/([0-9]{2})/([0-9]{4})/(Tipos)(|/)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&dia=$2&mes=$3&ano=$4&tipo_exibicao=$5 [L,NC,QSA]
+        RewriteRule ^(Diario)/([0-9]{2})/([0-9]{2})/([0-9]{4})/(Tipos)/([0-9]+)(|/)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&dia=$2&mes=$3&ano=$4&tipo_exibicao=$5&tipo_id=$6 [L,NC,QSA]
+    
+        # Causas de acidente
+        RewriteRule ^(Diario)/([0-9]{2})/([0-9]{2})/([0-9]{4})/(Causas)(|/)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&dia=$2&mes=$3&ano=$4&tipo_exibicao=$5 [L,NC,QSA]
+        RewriteRule ^(Diario)/([0-9]{2})/([0-9]{2})/([0-9]{4})/(Causas)/([0-9]+)(|/)$ index.php?tipo=tipo_x_causa&tp_periodo=$1&dia=$2&mes=$3&ano=$4&tipo_exibicao=$5&causa_id=$6 [L,NC,QSA]
+    
+        # Faixa de idade
+        RewriteRule ^(Diario)/([0-9]{2})/([0-9]{2})/([0-9]{4})/(Idade)(|/)$ index.php?tipo=idade&tp_periodo=$1&dia=$2&mes=$3&ano=$4 [L,NC,QSA]
+        RewriteRule ^(Diario)/([0-9]{2})/([0-9]{2})/([0-9]{4})/(Idade)/(.+)(|/)$ index.php?tipo=idade&tp_periodo=$1&dia=$2&mes=$3&ano=$4&idade=$6 [L,NC,QSA]
+    
+    # endif (DIARIO) 
+
+
+
+
+#
+# RODOVIAS FEDERAIS
+RewriteRule ^BR-([0-9]+)(|/)$ index.php?tipo=br&br=$1 [L,NC,QSA]
+RewriteRule ^BR-([0-9]+)/(Anual)/([0-9]{4})(|/)$ index.php?tipo=br&br=$1&tp_periodo=$2&ano=$3 [L,NC,QSA]
+RewriteRule ^BR-([0-9]+)/(Semestre)/(1|2)/([0-9]{4})(|/)$ index.php?tipo=br&br=$1&tp_periodo=$2&periodo=$3&ano=$4 [L,NC,QSA]
+RewriteRule ^BR-([0-9]+)/(Trimestre)/(1|2|3|4)/([0-9]{4})(|/)$ index.php?tipo=br&br=$1&tp_periodo=$2&periodo=$3&ano=$4 [L,NC,QSA]
+RewriteRule ^BR-([0-9]+)/(Mensal)/([0-9]{2})/([0-9]{4})(|/)$ index.php?tipo=br&br=$1&tp_periodo=$2&mes=$3&ano=$4 [L,NC,QSA]
+RewriteRule ^BR-([0-9]+)/(Diario)/([0-9]{2})/([0-9]{2})/([0-9]{4})(|/)$ index.php?tipo=br&br=$1&tp_periodo=$2&dia=$3&mes=$4&ano=$5 [L,NC,QSA]
+#
+# RODOVIAS FEDERAIS SEPARADAS POR UF
+RewriteRule ^BR-([0-9]+)/([A-Z]{2})(|/)$ index.php?tipo=br.uf&br=$1&uf=$2&tp_periodo=$3&ano=$4 [L,NC,QSA]
+RewriteRule ^BR-([0-9]+)/([A-Z]{2})/(Anual)/([0-9]{4})(|/)$ index.php?tipo=br.uf&br=$1&uf=$2&tp_periodo=$3&ano=$4 [L,NC,QSA]
+RewriteRule ^BR-([0-9]+)/([A-Z]{2})/(Semestre)/(1|2)/([0-9]{4})(|/)$ index.php?tipo=br.uf&br=$1&uf=$2&tp_periodo=$3&periodo=$4&ano=$5 [L,NC,QSA]
+RewriteRule ^BR-([0-9]+)/([A-Z]{2})/(Trimestre)/(1|2|3|4)/([0-9]{4})(|/)$ index.php?tipo=br.uf&br=$1&uf=$2&tp_periodo=$3&periodo=$4&ano=$5 [L,NC,QSA]
+RewriteRule ^BR-([0-9]+)/([A-Z]{2})/(Mensal)/([0-9]{1,2})/([0-9]{4})(|/)$ index.php?tipo=br.uf&br=$1&uf=$2&tp_periodo=$3&mes=$4&ano=$5 [L,NC,QSA]
+RewriteRule ^BR-([0-9]+)/([A-Z]{2})/(Diario)/([0-9]{1,2})/([0-9]{1,2})/([0-9]{4})(|/)$ index.php?tipo=br.uf&br=$1&uf=$2&tp_periodo=$3&dia=$4&mes=$5&ano=$6 [L,NC,QSA]
+#
+# RODOVIAS FEDERAIS SEPARADAS POR TRECHOS A CADA 10 KM 
+RewriteRule ^BR-([0-9]+)/([A-Z]{2})/([0-9]{1,4})-([0-9]{1,4})(|/)$ index.php?tipo=br.uf.trecho&br=$1&uf=$2&trecho=$3-$4&tp_periodo=$5&ano=$6 [L,NC,QSA]
+RewriteRule ^BR-([0-9]+)/([A-Z]{2})/([0-9]{1,4})-([0-9]{1,4})/(Anual)/([0-9]{4})(|/)$ index.php?tipo=br.uf.trecho&br=$1&uf=$2&trecho=$3-$4&tp_periodo=$5&ano=$6 [L,NC,QSA]
+RewriteRule ^BR-([0-9]+)/([A-Z]{2})/([0-9]{1,4})-([0-9]{1,4})/(Semestre)/(1|2)/([0-9]{4})(|/)$ index.php?tipo=br.uf.trecho&br=$1&uf=$2&trecho=$3-$4&tp_periodo=$5&periodo=$6&ano=$7 [L,NC,QSA]
+RewriteRule ^BR-([0-9]+)/([A-Z]{2})/([0-9]{1,4})-([0-9]{1,4})/(Trimestre)/(1|2|3|4)/([0-9]{4})(|/)$ index.php?tipo=br.uf.trecho&br=$1&uf=$2&trecho=$3-$4&tp_periodo=$5&periodo=$6&ano=$7 [L,NC,QSA]
+RewriteRule ^BR-([0-9]+)/([A-Z]{2})/([0-9]{1,4})-([0-9]{1,4})/(Mensal)/([0-9]{2})/([0-9]{4})(|/)$ index.php?tipo=br.uf.trecho&br=$1&uf=$2&trecho=$3-$4&tp_periodo=$5&mes=$6&ano=$7 [L,NC,QSA]
+RewriteRule ^BR-([0-9]+)/([A-Z]{2})/([0-9]{1,4})-([0-9]{1,4})/(Diario)/([0-9]{2})/([0-9]{2})/([0-9]{4})(|/)$ index.php?tipo=br.uf.trecho&br=$1&uf=$2&trecho=$3-$4&tp_periodo=$5&dia=$6&mes=$7&ano=$8 [L,NC,QSA]
+
+# RODOVIAS FEDERAIS / OUTROS
+RewriteRule ^(BR)/(Perigosas)(|/)$ index.php?tipo=br.perigosas [L,NC,QSA]
+RewriteRule ^(BR)/(Procurar)(|/)$ index.php?tipo=br.search [L,NC,QSA]
+
+# BUSCA
+RewriteRule ^(Busca)$ index.php?tipo=busca [L,NC,QSA]
+
+# OUTROS
+RewriteRule ^(About)(|/)$ index.php?tipo=about [L,NC,QSA]
+RewriteRule ^(NotFound)(|/)$ index.php?tipo=notfound [L,NC,QSA]
+RewriteRule ^(MarioPacio)(|/)$ index.php?tipo=mario [L,NC,QSA]
+
+
+# Erro padrão
+ErrorDocument 404 /DPRF/index.php?tipo=404
+
+
+

@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * infoDPRF
+ * Arquivo responsável pela chamada e criação de cache das consultas sql.
+ * 
+ * @author Mário Pácio <mario.pacio@gmail.com>
+ * @copyright 2013
+ * @version 1.0
+ * @package infoDPRF
+ * @license AGPLv3 - http://www.gnu.org/licenses/agpl-3.0.html
+ * 
+ */
+
+    ob_start();
+    
+    ini_set('memory_limit', '-1');
+    set_time_limit(0);
+    
+    mysql_connect('localhost', 'root', '');
+    mysql_select_db('dprf');
+    
+    require_once 'infodprf.class.php';
+    
+    // Inicia a classe principal do projeto
+    $infoDPRF = new infoDPRF;
+    
+    // Configura a classe para o período atual
+    $infoDPRF->configure();
+    
+    // Faz a verificação da existência do cache para agilizar no carregamento da página
+    $Dados = $infoDPRF->getData();
+    
+    // Se o cache ainda não existir, faz a conexão com a tabela 
+    if(!$Dados){
+        // Executa o comando sql
+        $infoDPRF->getDataSQL();
+    }
+    
+    if(!$infoDPRF->resultados){
+
+        die('nenhum_resultado');
+
+    }
+    
+    die('ok');
+    
+
+?>

@@ -1,0 +1,1 @@
+Pasta onde os caches de querys ficam armazenados
