@@ -36,16 +36,21 @@ Para instalar o aplicativo **DPRF.info** serão necessários os seguintes recurs
 Os bancos de dados utilizados são fornecidos de acordo com a política de dados abertos no seguinte endereço: 
 [http://dados.gov.br/dataset/acidentes-rodovias-federais](http://dados.gov.br/dataset/acidentes-rodovias-federais)
 
+#### **Dados para acesso ao banco de dados:**
+- `Host: www.dprf.info`
+- `Usuário: infodprf_dados`
+- `Senha: dados_abertos`
+
 ### Configurações do banco de dados
 
-Os dados de acesso ao seu banco de dados devem ser alteradas no arquivo: **/infodprf.class.php**
+Os dados de acesso ao banco de dados devem ser alteradas no arquivo: 
+**infodprf.class.php** e **infodprf.cache.create.php**
 
 _Trecho do código:_
-*     `public function __construct(){`
 *          `// Conecta no banco de dados`
 *          `mysql_connect('localhost', 'root');`
 *          `mysql_select_db('dprf');`
-*     `}`
+
 
 ### Configurações do layout
 
