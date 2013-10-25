@@ -56,12 +56,12 @@ _Trecho do código:_
 
 
 ### Autores
-- **Mário Pácio**
-- Email: mario.pacio@gmail.com
-- Website: www.mariopacio.com
+* **Mário Pácio**
+* e-mail: mario.pacio@gmail.com
+* website: www.mariopacio.com
 
-- **Weslen Finotti**
-- contato@fastmark.com.br
+* **Weslen Finotti**
+* contato@fastmark.com.br
 
 
 ### Organização
