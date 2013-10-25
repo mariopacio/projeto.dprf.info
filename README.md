@@ -1,4 +1,4 @@
-## infoDPRF
+## DPRF.info
 
 Aplicativo para visualização de estatísticas dos acidentes de trânsito nas rodovias federais a partir de 2007. 
 Visualize as informações de forma fácil e organizada com filtragens por semestre, trimestre, mês e dia.
@@ -24,9 +24,9 @@ Principais recursos do aplicativo:
    rodovias, os horários mais críticos e visualize no mapa a localização aproximada dos locais mais críticos.
 
 
-## Informações para configuração do infoDPRF.
+## Informações para configuração do DPRF.info.
 
-Para instalar o aplicativo **infoDPRF** serão necessários os seguintes recursos:
+Para instalar o aplicativo **DPRF.info** serão necessários os seguintes recursos:
 
 * Apache com PHP 5+
 * MySQL 
@@ -55,9 +55,14 @@ _Trecho do código:_
 * `$infoDPRF->setTheme('clean');`
 
 
-### Autor
-Mário Pácio <mario.pacio@gmail.com>
-www.mariopacio.com
+### Autores
+- **Mário Pácio**
+- Email: mario.pacio@gmail.com
+- Website: www.mariopacio.com
+
+- **Weslen Finotti**
+- contato@fastmark.com.br
+
 
 ### Organização
 * [W3C Brasil](http://www.w3c.br/)
@@ -76,8 +81,6 @@ O concurso, em parceria com o Ministério da Justiça (Secretaria Executiva e De
 
 De acordo com o Ministerio da Justiça, “os boletins de ocorrências de trânsito nas rodovias federais contêm informações detalhadas desde 2007 sobre cada acidente registrado pela PRF. São mais de um milhão de registros com dezenas de informações, como características dos veículos envolvidos, causa identificada do acidente, quantidade de pessoas envolvidas e descrição completa do ocorrido. Também será publicada a base de dados de autuações de trânsito”.
 
-Fonte: iMasters
-
-
+Fonte: iMasters/Ministério da Justiça
 
 
