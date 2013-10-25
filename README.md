@@ -57,11 +57,11 @@ _Trecho do código:_
 
 ### Autores
 * **Mário Pácio**
-* e-mail: mario.pacio@gmail.com
-* website: www.mariopacio.com
+E-mail: mario.pacio@gmail.com
+Website: www.mariopacio.com
 
 * **Weslen Finotti**
-* contato@fastmark.com.br
+E-mail: contato@fastmark.com.br
 
 
 ### Organização
